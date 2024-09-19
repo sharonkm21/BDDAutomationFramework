@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Cucumber Test Suite" parallel="tests" thread-count="3">
+
+    <test name="Bank Feature">
+        <classes>
+            <class name="TestRunner.BankRunner"/>
+        </classes>
+    </test>
+
+    <test name="Registration Feature">
+        <classes>
+            <class name="TestRunner.RegistrationRunner"/>
+        </classes>
+    </test>
+
+    <test name="Sign In Out Feature">
+        <classes>
+            <class name="TestRunner.SignInOutRunner"/>
+        </classes>
+    </test>
+</suite>
