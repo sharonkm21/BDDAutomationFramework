@@ -41,7 +41,7 @@ public class RegistrationSteps extends BaseTestClass
     @When("I enter {string} and {string} for Personal Information")
     public void i_enter_and_for_personal_information(String firstNameKey, String lastNameKey) {
         String firstName= utils.readProperty(firstNameKey);
-        String lastName= utils.readProperty(lastNameKey);
+        String lastName12= utils.readProperty(lastNameKey);
         registrationPage.enterPersonalInfoRegistrationDetails(firstName,lastName);
     }
 
