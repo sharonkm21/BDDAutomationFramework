@@ -30,6 +30,9 @@ public class WithdrawAmount extends BaseTestClass {
             account.withdraw(amountRequested);
             dispensedAmount = amountRequested;
             extentReporter.logPass("Amount dispensed : "+dispensedAmount,false,driver);
+            //sample Code
+            //more Sample Code
+            //Addition of line
         } catch (IllegalArgumentException e) {
             dispensedAmount = 0;  // In case of insufficient funds
         }
