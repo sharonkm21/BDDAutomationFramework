@@ -2,6 +2,8 @@ package BankAccount;
 
 public class BankAccount implements Account {
     private double balance;
+    String name;
+    public static long accountNumber = 14;
 
     public BankAccount(double initialBalance) {
         this.balance = initialBalance;
@@ -9,7 +11,7 @@ public class BankAccount implements Account {
 
     @Override
     public void deposit(double amount) {
-        balance += amount;
+        int balance += amount;
     }
 
     @Override
