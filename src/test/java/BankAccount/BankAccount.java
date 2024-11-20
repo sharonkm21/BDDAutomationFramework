@@ -3,8 +3,7 @@ package BankAccount;
 public class BankAccount implements Account {
     private double balance;
 
-    public BankAccount(double initialBalance) {
-        //new line added
+    public BankAccount(double initialBalance ) {
         this.balance = initialBalance;
     }
 
@@ -14,7 +13,7 @@ public class BankAccount implements Account {
     }
 
     @Override
-    public void withdraw(double amount) {
+    public void withdraw(double amount ) {
         if (amount > balance) {
             throw new IllegalArgumentException("Insufficient funds");
         }
