@@ -15,6 +15,7 @@ public class WithdrawAmount extends BaseTestClass {
     private Account account;
     private double dispensedAmount;
     public ExtentReportManager extentReportManager=HookClass.getExtentObject();
+    public int accountNumber;
 
     // Step 1: Given I have a balance of $100 in my account
     @Given("^I have a balance of \\$(\\d+) in my account$")
@@ -30,9 +31,6 @@ public class WithdrawAmount extends BaseTestClass {
             account.withdraw(amountRequested);
             dispensedAmount = amountRequested;
             extentReporter.logPass("Amount dispensed : "+dispensedAmount,false,driver);
-            //sample Code
-            //more Sample Code
-            //Addition of line
         } catch (IllegalArgumentException e) {
             dispensedAmount = 0;  // In case of insufficient funds
         }
