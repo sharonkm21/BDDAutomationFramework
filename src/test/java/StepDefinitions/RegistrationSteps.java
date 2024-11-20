@@ -48,7 +48,7 @@ public class RegistrationSteps extends BaseTestClass
     @When("I enter {string} and {string} for Sign in Information")
     public void i_enter_and_for_sign_in_information(String emailKey, String passwordKey) {
         String email = utils.readProperty(emailKey);
-       // String password = utils.readProperty(passwordKey);
+        String password = utils.readProperty(passwordKey);
         registrationPage.enterSignInRegistrationDetails(email,password);
     }
 
@@ -61,10 +61,6 @@ public class RegistrationSteps extends BaseTestClass
     public void i_should_be_registered_successfully()
     {
         registrationPage.verifySuccessfulRegistration();
-
-
-
-        
     }
 
     @Then("I should see an error message about email already in use")

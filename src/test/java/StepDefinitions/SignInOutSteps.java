@@ -19,6 +19,7 @@ public class SignInOutSteps
     WebDriver driver;
     SignInPage signInPage;
     CommonUtilities utils = new CommonUtilities(DriverFactory.getWebDriver());
+    String pagename;
 
     public SignInOutSteps() {
         this.signInPage = new SignInPage(driver);
@@ -39,34 +40,38 @@ public class SignInOutSteps
 
     @When("I enter {string} and {string} for sign-in")
     public void iEnterAndForSignIn(String emailKey, String passwordKey) {
-        String username1=utils.readProperty(emailKey);
-        String password1=utils.readProperty(passwordKey);
-        signInPage.enterLoginDetails(username1,password1);
+        String username=utils.readProperty(emailKey);
+        String password=utils.readProperty(passwordKey);
+        signInPage.enterLoginDetails(username,password);
     }
 
     @And("I click the sign-in button")
-    public void iClickTheSignInButton() {
+    public void iClickTheSignInButton()
+    {
         signInPage.clickSignIn();
     }
 
     @Then("I should be signed in successfully")
     public void iShouldBeSignedInSuccessfully() {
-        //signInPage.verifySuccessLogin();
+        signInPage.verifySuccessLogin();
     }
 
     @Then("I should see an error message about invalid password")
-    public void iShouldSeeAnErrorMessageAboutInvalidCredentials() {
+    public void iShouldSeeAnErrorMessageAboutInvalidCredentials()
+    {
         signInPage.verifyInvalidLogin();
     }
 
     @When("I click the sign-out button")
-    public void iClickTheSignOutButton() {
+    public void iClickTheSignOutButton()
+    {
         signInPage.signOutFromAccount();
     }
 
     @Then("I should be signed out successfully")
-    public void iShouldBeSignedOutSuccessfully() {
-        //signInPage.verifyLogoutSuccessful();
+    public void iShouldBeSignedOutSuccessfully()
+    {
+        signInPage.verifyLogoutSuccessful();
     }
 
     @Then("I should see an error message about invalid username")

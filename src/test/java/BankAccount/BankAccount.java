@@ -2,18 +2,15 @@ package BankAccount;
 
 public class BankAccount implements Account {
     private double balance;
-    String nameCustomer;
-    public static long accountNumber = 14;
 
-    public BankAccount(double initialBalance,String nameCustomer) {
+    public BankAccount(double initialBalance) {
         //new line added
         this.balance = initialBalance;
-        this.nameCustomer = nameCustomer;
     }
 
     @Override
-    public void deposit(double amount ) {
-        int balance += amount;
+    public void deposit(double amount) {
+        balance += amount;
     }
 
     @Override
