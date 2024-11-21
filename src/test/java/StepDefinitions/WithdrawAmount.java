@@ -20,13 +20,13 @@ public class WithdrawAmount extends BaseTestClass {
     // Step 1: Given I have a balance of $100 in my account
     @Given("^I have a balance of \\$(\\d+) in my account$")
     public void setInitialBalance(int initialBalance) {
-        account = new BankAccount(initialBalance);
+        account = new BankAccount(initialBalance );
         extentReporter.logInfo("Initial Balance: "+initialBalance);
     }
 
     // Step 2: When I request $20
     @When("^I request \\$(\\d+)$")
-    public void setAmountRequested(int amountRequested) {
+    public void setAmountRequested(int amountRequested ) {
         try {
             account.withdraw(amountRequested);
             dispensedAmount = amountRequested;

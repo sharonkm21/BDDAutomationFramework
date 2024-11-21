@@ -40,16 +40,16 @@ public class RegistrationSteps extends BaseTestClass
 
     @When("I enter {string} and {string} for Personal Information")
     public void i_enter_and_for_personal_information(String firstNameKey, String lastNameKey) {
-        String firstName= utils.readProperty(firstNameKey);
+        String firstName12= utils.readProperty(firstNameKey);
         String lastName= utils.readProperty(lastNameKey);
-        registrationPage.enterPersonalInfoRegistrationDetails(firstName,lastName);
+        registrationPage.enterPersonalInfoRegistrationDetails(firstName12,lastName);
     }
 
     @When("I enter {string} and {string} for Sign in Information")
     public void i_enter_and_for_sign_in_information(String emailKey, String passwordKey) {
-        String email = utils.readProperty(emailKey);
+        String email12 = utils.readProperty(emailKey);
         String password = utils.readProperty(passwordKey);
-        registrationPage.enterSignInRegistrationDetails(email,password);
+        registrationPage.enterSignInRegistrationDetails(email12,password);
     }
 
     @And("I submit the registration form")
