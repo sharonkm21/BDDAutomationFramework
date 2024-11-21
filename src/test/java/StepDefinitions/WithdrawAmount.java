@@ -15,24 +15,22 @@ public class WithdrawAmount extends BaseTestClass {
     private Account account;
     private double dispensedAmount;
     public ExtentReportManager extentReportManager=HookClass.getExtentObject();
+    public int accountNumber;
 
     // Step 1: Given I have a balance of $100 in my account
     @Given("^I have a balance of \\$(\\d+) in my account$")
     public void setInitialBalance(int initialBalance) {
-        account = new BankAccount(initialBalance);
+        account = new BankAccount(initialBalance );
         extentReporter.logInfo("Initial Balance: "+initialBalance);
     }
 
     // Step 2: When I request $20
     @When("^I request \\$(\\d+)$")
-    public void setAmountRequested(int amountRequested) {
+    public void setAmountRequested(int amountRequested ) {
         try {
             account.withdraw(amountRequested);
             dispensedAmount = amountRequested;
             extentReporter.logPass("Amount dispensed : "+dispensedAmount,false,driver);
-            //sample Code
-            //more Sample Code
-            //Addition of line
         } catch (IllegalArgumentException e) {
             dispensedAmount = 0;  // In case of insufficient funds
         }

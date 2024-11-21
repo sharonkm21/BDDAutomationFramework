@@ -3,18 +3,17 @@ package BankAccount;
 public class BankAccount implements Account {
     private double balance;
 
-    public BankAccount(double initialBalance) {
-        //new line added
+    public BankAccount(double initialBalance ) {
         this.balance = initialBalance;
     }
 
     @Override
-    public void deposit(double amount) {
+    public void deposit(double amount ) {
         balance += amount;
     }
 
     @Override
-    public void withdraw(double amount) {
+    public void withdraw(double amount ) {
         if (amount > balance) {
             throw new IllegalArgumentException("Insufficient funds");
         }
